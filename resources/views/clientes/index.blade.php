@@ -1,12 +1,12 @@
 <x-app-layout>
     <div class="py-2">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <!--<div>
+            <div>
                 <h2>
                     <a href="{{route('clienteesp.index')}}"class="bg-gray-800 text-white rounded px-1 py-1">Clientes preferenciales</a>
                 </h2>
                 <br>   
-            </div>-->
+            </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900" >
                      <!--boton agregar clientes-->
