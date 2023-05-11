@@ -19,7 +19,7 @@
                     <!--Buscador-->
                     <form action="">
                         <div class="input-group mb-3">
-                            <input type="text" name="search" class="rounded border-gray-200 w-96 mb-3" placeholder="Buscar No.Cliente">
+                            <input type="text" name="search" class="rounded border-gray-200 w-96 mb-3" placeholder="Buscar No.Cliente/Nombre cliente">
                             <input type="submit" value="Buscar" class="bg-gray-800 text-white rounded px-4 py-2">
                         </div>
                         <br>

@@ -23,7 +23,8 @@ class PrecioClienteController extends Controller
                                 'clientes.nombre')
                                 ->join('clientes','clientes.NoCliente','=','preciocliente.NoCliente')
                                 ->when(request('search'), function($query){
-                                    return $query->where('preciocliente.NoCliente','like', '%'. request('search'). '%');
+                                    return $query->where('preciocliente.NoCliente','like', '%'. request('search'). '%')
+                                                 ->orWhere('clientes.nombre','like', '%'. request('search'). '%');
         
                                 })
                                 ->paginate(10)

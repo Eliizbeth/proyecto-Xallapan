@@ -15,7 +15,8 @@ class ClienteController extends Controller
         return view('clientes.index',[
             'clientes' => Cliente::latest('id')
             ->when(request('search'), function($query){
-                return $query->where('NoCliente','like', '%'. request('search'). '%');
+                return $query->where('NoCliente','like', '%'. request('search'). '%')
+                             ->orWhere('nombre','like', '%'. request('search'). '%');
 
             })
             ->paginate(5)
@@ -66,8 +67,10 @@ class ClienteController extends Controller
 
     public function destroy(Cliente $cliente)
     {
+       
         $cliente->delete();
         return back();
+    
     }
         
 }
