@@ -57,7 +57,7 @@
                                     @method('DELETE')
                                     <input 
                                     type="submit" 
-                                    value="Eliminar"
+                                    value="Deshabilitar"
                                     class="bg-gray-800 text-white rounded px-4 py-2"
                                     onclick="return confirm('Desea eliminar')">
                                 
