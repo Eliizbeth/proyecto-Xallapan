@@ -1,32 +1,50 @@
 @csrf
-<label for="uppercase  text-gray-700 text-xs"><b>NoCliente</b></label>
-<select name="NoCliente" id="" class="rounded border-gray-200 w-full mb-4">
-    <option disabled selected>Selecciona cliente</option>
+<!--input cliente-->
+<label class="label">
+    <span class="label-text">Cliente</span>
+</label>
+<select name="NoCliente" id="" class="select select-bordered w-full max-w-xs">
     @foreach($clientes as $cliente)
     <option value="{{old('NoCliente', $cliente->NoCliente)}}">{{$cliente->NoCliente}} - {{$cliente->nombre}}</option>
     @endforeach 
+    <option disabled selected>Selecciona cliente</option>
 </select>
 
-<label for="uppercase  text-gray-700 text-xs"><b> Código Barras</b></label>
-<select name="CodigoBarras" id="" class="rounded border-gray-200 w-full mb-4">
-    <option disabled selected>Selecciona producto</option>
+<!--input codigo barras-->
+<label class="label">
+    <span class="label-text">Código de barras</span>
+</label>
+<select name="CodigoBarras" id="" class="select select-bordered w-full max-w-xs">
     @foreach($productos as $producto)
     <option value="{{old('CodigoBarras', $producto->CodigoBarras)}}">{{$producto->CodigoBarras}} - {{$producto->Descripcion}}</option>
     @endforeach 
+    <option disabled selected>Selecciona producto</option>
 </select>
-
-<label for="uppercase  text-gray-700 text-xs"><b>Precio Contado</b></label>
-<input type="text" name="Precio" class="rounded border-gray-200 w-full mb-4" value="{{$precio->Credito}}">
-<select name="Credito" id="" class="rounded border-gray-200 w-full mb-4">
-    <option value="" selected>Selecciona opción</option>
+<!--input precio contado-->
+<label class="label">
+    <span class="label-text">Precio contado</span>
+</label>
+<input type="text" name="Precio" class="input input-bordered w-full max-w-xs" value="{{$precio->Credito}}">
+<!--input tipo cliente-->
+<label class="label">
+    <span class="label-text">Tipo cliente</span>
+</label>
+<select name="Credito" id="" class="select select-bordered w-full max-w-xs">
     <option value="1">Crédito</option>
     <option value="0">Contado</option>
+    <option disabled selected>Selecciona crédito/contado</option>
 </select>
-<label for="uppercase  text-gray-700 text-xs"><b>Precio Crédito</b> </label>
-<input type="text" name="PrecioCredito" class="rounded border-gray-200 w-full mb-4" value="{{$precio->PrecioCredito}}">
+<!--input precio credito-->
+<label class="label">
+    <span class="label-text">Precio crédito</span>
+</label>
+<input type="text" name="PrecioCredito" class="input input-bordered w-full max-w-xs" value="{{$precio->PrecioCredito}}">
 
-<label for="uppercase  text-gray-700 text-xs"><b>Clave ruta</b></label>
-<select name="claveruta" id="" class="rounded border-gray-200 w-full mb-4">
+<!--input clave ruta-->
+<label class="label">
+    <span class="label-text">Clave ruta</span>
+</label>
+<select name="claveruta" id="" class="select select-bordered w-full max-w-xs">
     <option disabled selected>Selecciona ruta</option>
     @foreach($rutas as $ruta)
     <option value="{{old('ClaveRuta', $ruta->ClaveRuta)}}">{{$ruta->ClaveRuta}}</option>

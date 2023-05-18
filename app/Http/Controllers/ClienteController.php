@@ -19,7 +19,7 @@ class ClienteController extends Controller
                              ->orWhere('nombre','like', '%'. request('search'). '%');
 
             })
-            ->paginate(5)
+            ->paginate(100)
 
            
         ]);
@@ -71,6 +71,18 @@ class ClienteController extends Controller
         $cliente->delete();
         return back();
     
+    }
+    //funcion para la select con búsqueda de lista de precios
+    public function selectSearch(Request $request)
+    {
+        $cliente = [];
+        if($request->has('q')){
+            $search = $request->q;
+            $cliente = Cliente::select("NoCliente","nombre")
+                     ->where('name', 'LIKE', "%search%")
+                     ->get();
+        }
+        return response()->json($cliente);
     }
         
 }

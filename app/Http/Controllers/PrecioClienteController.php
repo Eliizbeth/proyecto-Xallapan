@@ -27,7 +27,7 @@ class PrecioClienteController extends Controller
                                                  ->orWhere('clientes.nombre','like', '%'. request('search'). '%');
         
                                 })
-                                ->paginate(10)
+                                ->paginate(100)
                             
         ]);
        
@@ -60,7 +60,6 @@ class PrecioClienteController extends Controller
 
     public function edit(PrecioCliente $precio){
         return view('clienteesp.edit', ['precios' => $precio, 'precio' =>PrecioCliente::get(
-            'preciocliente.NoCliente',
             'preciocliente.CodigoBarras',
             'preciocliente.Precio',
             'preciocliente.Credito',
@@ -69,6 +68,22 @@ class PrecioClienteController extends Controller
             ->join('clientes','clientes.NoCliente','=','preciocliente.NoCliente') ]);
        
     }
+    public function update(Request $request, precioCliente $precio){
+        $precio->update([
+            'CodigoBarras' => $request->CodigoBarras,
+            'Precio'       => $request->Precio,
+            'Credito'      => $request->Credito,
+            'PrecioCredito'=> $request->PrecioCredito,
+            'claveruta'    => $request->claveruta,
+            
+
+        ]);
+
+        return redirect()->route('clienteesp.index', $precio);
+       
+    }
+   
+    
    
   
 

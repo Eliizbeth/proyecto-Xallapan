@@ -1,26 +1,63 @@
 @csrf
-<label for="uppercase  text-gray-700 text-xs">NoCliente</label>
-<input type="text" name="NoCliente" class="rounded border-gray-200 w-full mb-4" value="{{$ultimocliente->NoCliente + 1}}">
-
-<label for="uppercase  text-gray-700 text-xs">Nombre</label>
+<label class="label">
+    <span class="label-text">No.Cliente</span>
+</label>
+<input type="text" name="NoCliente" class="input input-bordered w-full max-w-xs" value="{{$ultimocliente->NoCliente + 1}}">
+<br>
+<label class="label">
+    <span class="label-text">Nombre</span>
+</label>
 <span class="text-xs text-red-600">@error('nombre'){{ $message }} @enderror</span>
-<input type="text" name="nombre" class="rounded border-gray-200 w-full mb-4" value="{{old('nombre', $cliente->nombre)}}">
+<input type="text" name="nombre" class="input input-bordered w-full max-w-xs" value="{{old('nombre', $cliente->nombre)}}">
 
-<label for="uppercase  text-gray-700 text-xs">Dirección</label>
+<label class="label">
+    <span class="label-text">Dirección</span>
+</label>
 <span class="text-xs text-red-600">@error('direccion'){{ $message }} @enderror</span>
-<input type="text" name="direccion" class="rounded border-gray-200 w-full mb-4" value="{{old('direccion', $cliente->direccion)}}">
+<input type="text" name="direccion" class="input input-bordered w-full max-w-xs" value="{{old('direccion', $cliente->direccion)}}">
 
-<label for="uppercase  text-gray-700 text-xs">Teléfono</label>
+<label class="label">
+    <span class="label-text">Teléfono</span>
+</label>
 <span class="text-xs text-red-600">@error('telefono_fijo'){{ $message }} @enderror</span>
-<input type="text" name="telefono_fijo" class="rounded border-gray-200 w-full mb-4" value="{{old('telefono_fijo', $cliente->telefono_fijo)}}">
-
-<select name="CodigoListaPrecio" id="" class="rounded border-gray-200 w-full mb-4">
-    <option value="">Selecciona precio</option>
+<input type="text" name="telefono_fijo" class="input input-bordered w-full max-w-xs" value="{{old('telefono_fijo', $cliente->telefono_fijo)}}">
+<label class="label">
+    <span class="label-text">Código precio</span>
+</label>
+<select class="select select-bordered w-full max-w-xs" name="CodigoListaPrecio" >
     @foreach($listas as $lista)
     <option value="{{old('Codigo', $lista->Codigo)}}" selected>{{$lista->Codigo}} - {{$lista->Nombre}}</option>
     @endforeach 
+    <option disabled selected>Selecciona Código</option>
 </select>
+<!--
+<select class="livesearch form-control" name="CodigoListaPrecio" id="search">
+</select>
+-->
 <div class="flex justify-between items-center">
     <a type="button" href="{{route('clientes.index')}}" class="text-indigo-600">Volver</a>
     <input type="submit" value="Enviar" class="bg-gray-800 text-white rounded px-4 py-2">
 </div>
+<!--
+<script type="text/javascript">
+  $('#search').select({
+    placeholder: 'Selecciona código',
+    ajax: {
+      url: path,
+      dataType: 'json',
+      delay: 250,
+      processResults: function(data){
+        return {
+          results: $.map(data,function(item){
+            return {
+              text: item.nombre,
+              id: item.NoCliente
+            }
+          })
+        };
+      },
+      cache: true
+    }
+  });
+
+</script>-->

@@ -8,7 +8,7 @@
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                   <form action="{{route('clienteesp.update', $precio)}}" method="POST">
+                   <form action="{{route('clienteesp.update', $precios)}}" method="POST">
                     @method('PUT')
                     @include('clienteesp._form')
                    </form>
