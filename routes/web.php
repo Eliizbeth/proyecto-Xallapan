@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ClienteController;
-use App\Http\Controllers\PrecioClienteController;
+use App\Http\Controllers\ClienteprefController;
 use App\Http\Controllers\ProfileController;
 
 
@@ -13,7 +13,7 @@ Route::controller(PageController::class)->group(function(){
     Route::get('clientes',   'clientes')->name('clientes');
     Route::get('aquabonos', 'aquabonos')->name('aquabonos');
     Route::get('agregarcliente', 'agregarcliente')->name('agregarcliente');
-    Route::get('precioCliente', 'precioCliente')->name('precioCliente');
+    /*Route::get('precioCliente', 'precioCliente')->name('precioCliente');*/
 
 
 });
@@ -23,7 +23,7 @@ Route::controller(PageController::class)->group(function(){
 Route::redirect('dashboard',('clientes'))->name('dashboard');
 
 Route::resource('clientes', ClienteController::class)->except(['show'])->middleware(['auth']);
-Route::resource('clienteesp', PrecioClienteController::class)->except(['show'])->middleware(['auth']);
+Route::resource('clienteesp',ClienteprefController::class)->except(['show'])->middleware(['auth']);
 
 
 
