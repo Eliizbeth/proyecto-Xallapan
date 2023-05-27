@@ -10,7 +10,7 @@
                 <div class="p-6 text-gray-900">
                    <form action="{{route('clientes.update',$cliente)}}" method="POST">
                     @method('PUT')
-                    @include('clientes._form')
+                    @include('clientes._formedit')
                    </form>
                 </div>
             </div>

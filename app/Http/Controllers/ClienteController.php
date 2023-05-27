@@ -41,7 +41,7 @@ class ClienteController extends Controller
             'CodigoListaPrecio' => $request->CodigoListaPrecio,
 
         ]);
-       return redirect()->route('clientes.index', $cliente);
+       return redirect()->route('clientes.index', $cliente)->with('message','Cliente agregado correctamente');;
        
     }
 
@@ -62,27 +62,16 @@ class ClienteController extends Controller
 
         ]);
 
-        return redirect()->route('clientes.index', $cliente);
+        return redirect()->route('clientes.index', $cliente)->with('message','Cliente actualizado correctamente');
     }
 
     public function destroy(Cliente $cliente)
     {
        
         $cliente->delete();
-        return back();
+        return back()->with('message','Cliente deshabilitado correctamente');
     
     }
-    //funcion para la select con búsqueda de lista de precios
-    public function selectSearch(Request $request)
-    {
-        $cliente = [];
-        if($request->has('q')){
-            $search = $request->q;
-            $cliente = Cliente::select("NoCliente","nombre")
-                     ->where('name', 'LIKE', "%search%")
-                     ->get();
-        }
-        return response()->json($cliente);
-    }
+   
         
 }

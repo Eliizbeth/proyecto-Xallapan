@@ -26,14 +26,10 @@
 </label>
 <select class="select select-bordered w-full max-w-xs" name="CodigoListaPrecio" >
     @foreach($listas as $lista)
-    <option value="{{old('Codigo', $lista->Codigo)}}" selected>{{$lista->Codigo}} - {{$lista->Nombre}}</option>
+    <option value="{{$lista->Codigo}}" @if($cliente->CodigoListaPrecio === $lista->Codigo) selected @endif">{{$lista->Codigo}} - {{$lista->Nombre}}</option>
+
     @endforeach 
-    <option disabled selected>Selecciona Código</option>
 </select>
-<!--
-<select class="livesearch form-control" name="CodigoListaPrecio" id="search">
-</select>
--->
 <div class="flex justify-between items-center">
     <a type="button" href="{{route('clientes.index')}}" class="text-indigo-600">Volver</a>
     <input type="submit" value="Enviar" class="bg-gray-800 text-white rounded px-4 py-2">

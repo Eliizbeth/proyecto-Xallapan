@@ -24,7 +24,7 @@
 <label class="label">
     <span class="label-text">Precio contado</span>
 </label>
-<input type="text" name="Precio" class="input input-bordered w-full max-w-xs" value="{{$precio->Credito}}">
+<input type="text" name="Precio" class="input input-bordered w-full max-w-xs" value="{{$clientepref->Credito}}">
 <!--input tipo cliente-->
 <label class="label">
     <span class="label-text">Tipo cliente</span>
@@ -38,7 +38,7 @@
 <label class="label">
     <span class="label-text">Precio crédito</span>
 </label>
-<input type="text" name="PrecioCredito" class="input input-bordered w-full max-w-xs" value="{{$precio->PrecioCredito}}">
+<input type="text" name="PrecioCredito" class="input input-bordered w-full max-w-xs" value="{{$clientepref->PrecioCredito}}">
 
 <!--input clave ruta-->
 <label class="label">
@@ -55,6 +55,6 @@
 
 
 <div class="flex justify-between items-center">
-    <a type="button" href="{{route('clienteesp.index')}}" class="text-indigo-600">Volver</a>
+    <a type="button" href="{{route('clientepref.index')}}" class="text-indigo-600">Volver</a>
     <input type="submit" value="Enviar" class="bg-gray-800 text-white rounded px-4 py-2">
 </div>

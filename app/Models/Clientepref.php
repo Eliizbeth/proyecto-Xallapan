@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Clientepref extends Model
-{   protected $primaryKey = 'CodigoBarras';
+{   
     use HasFactory;
     protected $fillable = [
         'NoCliente',
@@ -17,4 +17,7 @@ class Clientepref extends Model
         'claveruta'
     ];
     protected $table = 'preciocliente';
+    protected $primaryKey = 'id_precio';
+
+
 }

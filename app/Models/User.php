@@ -45,7 +45,8 @@ class User extends Authenticatable
     public function clientes(){
         return $this->hasMany(Cliente::class);
     }
+    
     public function precios(){
-        return $this->hasMany(PrecioCliente::class);
+        return $this->hasMany(Clientepref::class);
     }
 }

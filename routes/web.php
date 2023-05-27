@@ -23,7 +23,7 @@ Route::controller(PageController::class)->group(function(){
 Route::redirect('dashboard',('clientes'))->name('dashboard');
 
 Route::resource('clientes', ClienteController::class)->except(['show'])->middleware(['auth']);
-Route::resource('clienteesp',ClienteprefController::class)->except(['show'])->middleware(['auth']);
+Route::resource('clientepref',ClienteprefController::class)->except(['show'])->middleware(['auth']);
 
 
 
