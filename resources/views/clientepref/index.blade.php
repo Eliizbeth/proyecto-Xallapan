@@ -34,7 +34,7 @@
                     @endif
                     <!--tabla clientes preferenciales-->
                     <div class="overflow-x-auto h-96">
-                        <table class="table table-zebra w-full">
+                        <table class="table-auto table-zebra">
                             <thead>
                                 <tr>
                                 <th scope>No.Cliente</th>

@@ -41,8 +41,8 @@
                     @endif
 
                     <!--Tabla clientes-->
-                    <div class="overflow-x-auto h-96">
-                        <table class="table table-zebra w-full">
+                    <div class="overflow-y-auto h-96">
+                        <table class="table-auto table-zebra">
                             <thead>
                                 <tr>
                                 <th scope>No.Cliente</th>
@@ -86,7 +86,10 @@
                         </table>
 
                     </div>
-                    {{ $clientes->links()}}
+                    
+                       {{ $clientes->onEachSide(0)->links()}}
+            
+                    
                 </div>
             </div>
         </div>
