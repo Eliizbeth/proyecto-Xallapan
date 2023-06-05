@@ -2,7 +2,7 @@
 <label class="label">
     <span class="label-text">No.Cliente</span>
 </label>
-<input type="text" name="NoCliente" class="input input-bordered w-full max-w-xs" value="{{$ultimocliente->NoCliente + 1}}">
+<input type="text" name="NoCliente" class="input input-bordered w-full max-w-xs" value="{{$ultimocliente->NoCliente + 1}}" readonly>
 <br>
 <label class="label">
     <span class="label-text">Nombre</span>

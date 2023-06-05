@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use App\Models\Cliente;
-use App\Models\ListaPrecio;
+/*use App\Models\ListaPrecio;*/
 
 
 use Illuminate\Http\Request;
@@ -27,7 +27,7 @@ class ClienteController extends Controller
 
     public function create(Cliente $cliente)
     {
-        return view('clientes.create', ['cliente' => $cliente, 'listas'=>ListaPrecio::all(), 'ultimocliente'=>DB::table('clientes')->get()->last()]);
+        return view('clientes.create', ['cliente' => $cliente, 'listas'=>DB::table('listasprecios')->get(), 'ultimocliente'=>DB::table('clientes')->get()->last()]);
         @dump($request);
     }
 
@@ -48,7 +48,7 @@ class ClienteController extends Controller
 
     public function edit(Cliente $cliente)
     {
-       return view('clientes.edit', ['cliente' => $cliente, 'listas'=>ListaPrecio::all(), 'ultimocliente'=>DB::table('clientes')->get()->last()]);
+       return view('clientes.edit', ['cliente' => $cliente, 'listas'=>DB::table('listasprecios')->get(), 'ultimocliente'=>DB::table('clientes')->get()->last()]);
     }
 
 
